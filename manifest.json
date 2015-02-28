@@ -1,0 +1,24 @@
+{
+	"name": "Dummy Addon",
+	"username": "user",
+	"password": "password",
+	"sso_salt": "sso_salt",
+	"short_description": "useless addon",
+	"description": "complexe addon",
+	"logo_url": "http://scalingo.com/logo.png",
+	"config_vars": ["DUMMY_VAR"],
+	"production": {
+		"base_url": "https://null-addon.scalingo.io/scalingo/resources",
+		"sso_url": "https://null-addon.scalingo.io/sso"
+	},
+	"test": {
+		"base_url": "http://localhost:5000/scalingo/resources",
+		"sso_url": "http://localhost:5000/sso"
+	},
+	"plans": [{
+		"name": "free",
+		"display_name": "Really Free",
+		"price": 0.0,
+		"description": "Super awesome free"
+	}]
+}
