@@ -19,17 +19,19 @@ var (
 		},
 		Action: func(c *cli.Context) {
 			if len(c.Args()) != 1 {
-				log.Fatalln(os.Args, "<addon id> --plan <plan>")
+				fmt.Println("Usage:", os.Args[0], "<addon id> --plan <plan>")
+				os.Exit(-127)
 			}
 			id := c.Args()[0]
 			plan := c.String("plan")
 			if plan == "" {
 				log.Fatalln("no plan specified")
 			} else if !manifest.PlanExist(plan) {
-				log.Fatalln("Plan", plan, "is not defined in manifest")
+				fmt.Println("Plan", plan, "is not defined in manifest")
+				os.Exit(1)
 			}
 			options := manifest.PlanOptions(plan)
-			res, err := doRequest("POST", manifest.Test.BaseURL+"/"+id, map[string]interface{}{
+			res, err := doRequest("PUT", manifest.Test.BaseURL+"/"+id, map[string]interface{}{
 				"plan":    plan,
 				"options": options,
 			})

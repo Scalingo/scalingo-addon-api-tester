@@ -20,5 +20,10 @@
 		"display_name": "Really Free",
 		"price": 0.0,
 		"description": "Super awesome free"
+	}, {
+		"name": "premium",
+		"display_name": "Super premium",
+		"price": 100.0,
+		"description": "Super expensive addon"
 	}]
 }

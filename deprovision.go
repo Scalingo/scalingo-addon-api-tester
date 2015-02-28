@@ -23,15 +23,15 @@ var (
 				log.Fatalln("Fail to delete resource:", err)
 			}
 			defer res.Body.Close()
-			if res.StatusCode != 204 {
-				log.Fatalln("Addon returned bad status:", res.Status, "expected 204")
-			}
 			body, err := ioutil.ReadAll(res.Body)
 			if err != nil {
 				log.Fatalln("Failed to read body from addon:", err)
 			}
 			if len(body) != 0 {
-				log.Fatalln("Expected empty body, got", string(body))
+				log.Fatalf("Expected empty body, got '%s'\n", string(body))
+			}
+			if res.StatusCode != 204 {
+				log.Fatalln("Addon returned bad status:", res.Status, "expected 204 - body:", string(body))
 			}
 			err = deleteAddonRef(id)
 			if err != nil {

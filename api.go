@@ -30,8 +30,10 @@ func doRequest(method string, url string, payload interface{}) (*http.Response, 
 		return nil, err
 	}
 
-	req.Header.Add("Content-Type", "application/json")
-	req.Header.Add("Accept", "application/json")
+	if req.Method != "DELETE" {
+		req.Header.Add("Content-Type", "application/json")
+		req.Header.Add("Accept", "application/json")
+	}
 	req.SetBasicAuth(manifest.Username, manifest.Password)
 
 	return http.DefaultClient.Do(req)
