@@ -12,8 +12,8 @@ documentation website: http://developers.scalingo.com/addons
 
 You need go to be installed on your computer
 
-```
-go get github.com/Scalingo/scalingo-addon-api-tester
+```sh
+$ go get github.com/Scalingo/scalingo-addon-api-tester
 ```
 
 ## The addon manifest
@@ -25,7 +25,7 @@ here: http://developers.scalingo.com/addons/manifest.html
 You can specify another path with the global flag: `--manifest`
 
 ```sh
-scalingo-addon-api-tester --manifest provision
+$ scalingo-addon-api-tester --manifest provision
 ```
 
 ## Commands
@@ -33,7 +33,7 @@ scalingo-addon-api-tester --manifest provision
 ### Provision an addon
 
 ```sh
-scalingo-addon-api-tester provision [--plan <plan>] [--app <app>]
+$ scalingo-addon-api-tester provision [--plan <plan>] [--app <app>]
 ```
 
 Both flags are optional, the tool is generating random app name if
@@ -43,7 +43,7 @@ first defined in your manifest.
 ### Update an addon
 
 ```sh
-scalingo-addon-api-tester update <id> --plan <plan>
+$ scalingo-addon-api-tester update <id> --plan <plan>
 ```
 
 Use an existing addon ID (use `list` command to get them) and make the
@@ -52,7 +52,7 @@ request to the addon web server to update the plan of the resource.
 ### Deprovision an addon
 
 ```sh
-scalingo-addon-api-tester deprovision <id>
+$ scalingo-addon-api-tester deprovision <id>
 ```
 
 Make a request to deprovision an addon with the given ID
@@ -66,22 +66,22 @@ to display those data.
 Example:
 
 ```sh
-scalingo-addon-api-tester provision
+$ scalingo-addon-api-tester provision
 → OK
-scalingo-addon-api-tester list
+$ scalingo-addon-api-tester list
 - addon-1: free
-scalingo-addon-api-tester update addon-1 --plan premium
+$ scalingo-addon-api-tester update addon-1 --plan premium
 → OK
-scalingo-addon-api-tester list
+$ scalingo-addon-api-tester list
 - addon-1: premium
-scalingo-addon-api-tester deprovision addon-1
+$ scalingo-addon-api-tester deprovision addon-1
 → OK
 ```
 
 ### List addons
 
 ```sh
-scalingo-addon-api-tester list
+$ scalingo-addon-api-tester list
 ```
 
 Display all the addons which have been saved.
@@ -89,7 +89,7 @@ Display all the addons which have been saved.
 ### Purge addons
 
 ```sh
-scalingo-addon-api-tester purge
+$ scalingo-addon-api-tester purge
 ```
 
 If the database is completely invalid, just run the purge command,
