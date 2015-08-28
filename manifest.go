@@ -28,6 +28,7 @@ type Manifest struct {
 	ShortDescription string   `json:"short_description"`
 	Description      string   `json:"description"`
 	ConfigVars       []string `json:"config_vars"`
+	LogDrain         bool     `json:"log_drain"`
 	Production       struct {
 		BaseURL string `json:"base_url"`
 		SSOURL  string `json:"sso_url"`

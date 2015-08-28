@@ -7,6 +7,7 @@
 	"description": "complexe addon",
 	"logo_url": "http://scalingo.com/logo.png",
 	"config_vars": ["DUMMY_VAR"],
+	"log_drain": false,
 	"production": {
 		"base_url": "https://null-addon.scalingo.io/scalingo/resources",
 		"sso_url": "https://null-addon.scalingo.io/sso"
