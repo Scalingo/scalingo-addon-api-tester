@@ -8,7 +8,7 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/Scalingo/scalingo-addon-api-tester/Godeps/_workspace/src/github.com/codegangsta/cli"
+	"github.com/codegangsta/cli"
 )
 
 var (
