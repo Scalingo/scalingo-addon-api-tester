@@ -1,3 +1,5 @@
+> :warning: **This project is not up to date (02/2022)**: The API and this tool have diverged, it cannot be used anymore 
+
 # Scalingo Addon API Tester tool
 
 The goal of this tool is to help developers to test their Addon
